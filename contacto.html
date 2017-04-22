@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contactanos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-validator/css/bootstrapValidator.min.css">
+</head>
+<body>
+
+
+<header id="main-header">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="jumbotron text-center">
+    <div id="titulo">
+        <h1>Contactanos</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 text-center">
+        Escríbenos tus comentarios acerca de Lechugas y Más o algún servicio.
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-push-2 col-sm-12">
+            <section>
+
+                <form id="formDatosContacto" method="post" name="formDatosContacto" >
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>Los campos marcados con <b id="obligatorio">*</b> son obligatorios.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="nombres" class="col-xs-3 control-label">
+                                *Nombre(s)
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" id="nombres" name="nombres" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="apellidos" class="col-xs-3 control-label">
+                                *Apellidos
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="empresa" class="col-xs-3 control-label">
+                                Empresa
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" id="empresa" name="empresa" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="telefono" class="col-xs-3 control-label">
+                                *Teléfono con clave
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" name="telefono" id="telefono" class="form-control" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="celular" class="col-xs-3 control-label">
+                                Móvil
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="celular" id="celular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="email" class="col-xs-3 control-label">
+                                *Correo electrónico
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="email" id="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="pais" class="col-xs-3 control-label">
+                                Pais
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="pais" id="pais">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="asunto" class="col-xs-3 control-label">
+                                *Asunto
+                            </label>
+                            <div class="col-xs-4">
+                                <select name="asunto" id="asunto" class="form-control">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Cotización">Cotización</option>
+                                    <option value="Felicitación">Felicitación</option>
+                                    <option value="Dudas/Aclaraciones">Dudas/Aclaraciones</option>
+                                    <option value="Problema">Problema</option>
+                                    <option value="Queja">Queja</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="mensaje" class="col-xs-3 control-label">
+                                *Mensaje
+                            </label>
+                            <div class="col-xs-4">
+                                <textarea class="form-control" name="mensaje" id="mensaje"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-5 col-md-4 col-md-push-2 guard ">
+                                <div class="col-xs-6 col-xs-push-3 col-sm-6 ">
+                                    <button type="submit" id="enviarBtn" class="btn btn-info ">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="col-xs-12 contenido">
+
+                    <div class="tab-content">
+                        <div id="ubicacion-tab" class="tab-pane fade in active">
+                            <div class="google-maps">
+
+                                <!-- Update container gmaps -->
+                                <div id="map_canvas"
+                                     style="width: 700px;height: 300px; top: 2px; position: relative; overflow: hidden;"></div>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="well well-sm">Copyright</div>
+    <script type="text/javascript" src="assets/js/jQuery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIAl4DPDBqiein7u3jcSoViTjwckT3pbY&callback=initMap">
+    </script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</footer>
+</body>
+</html>
