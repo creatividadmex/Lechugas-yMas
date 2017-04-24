@@ -125,31 +125,31 @@ $('#formDatosContacto')
         e.preventDefault();
         var $form     = $(e.target),
             validator = $form.data('bootstrapValidator');
-        var cuerpoCorreo = "Aquien corresponda,\n"
-            +"Mis datos son: \n" +
-            "Nombres: " +
-            $('#nombres').val()+"\n" +
-            "Apellidos: " +
-            $('#apellidos').val()+"\n" +
-            "Empresa: " +
-            $('#empresa').val()+"\n" +
-            "Telefono: " +
-            $('#telefono').val()+"\n" +
-            "Movil: " +
-            $('#celular').val()+"\n" +
-            "Correo Electrónico: " +
-            $('#email').val()+"\n" +
-            "Pais: " +
-            $('#pais').val()+"\n\n" +
-            "Mis comentarios son: " +
-            $('#mensaje').val()+"";
+        var parametros ={
+            "nombres": $('#nombres').val(),
+            "apellidos": $('#apellidos').val(),
+            "empresa":  $('#empresa').val(),
+            "telefono": $('#telefono').val(),
+            "celular":  $('#celular').val(),
+            "email": $('#email').val(),
+            "pais": $('#pais').val(),
+            "mensaje": $('#mensaje').val(),
+            "asunto": $('#asunto').val()
+        };
 
-        var link = "mailto:fwd613@gmail.com"
-            //+ "?cc=ant.mon.diaz@hotmail.com"
-            + "&subject=" + $('#asunto').val()
-            + "&body=" + encodeURIComponent(cuerpoCorreo);
-
-        window.location.href = link;
+       $.ajax({
+           data: parametros,
+           url:'mail.php',
+           type: 'post',
+           success: function () {
+               new PNotify({
+                   title: 'Correo enviado',
+                   text: 'Acabamos de enviar a “Lechugas y Más” sus datos. Gracias por hacernos llegar su opinión',
+                   type: 'success',
+                   icon: 'glyphicon glyphicon-envelope'
+               });
+           }
+       });
         $('#formDatosContacto').bootstrapValidator('resetForm', true);
     });
 
